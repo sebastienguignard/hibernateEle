@@ -5,6 +5,7 @@
  */
 package com.aifcc.formation.core.service;
 
+import com.aifcc.formation.core.dao.HibernateFilmDao;
 import com.aifcc.formation.core.dao.JdbcFilmDao;
 import com.aifcc.formation.core.entitys.Film;
 
@@ -15,9 +16,8 @@ import com.aifcc.formation.core.entitys.Film;
 public class FilmService {
     
     public void registerFilm(Film film){
-        JdbcFilmDao jdbc = new JdbcFilmDao();
+        HibernateFilmDao jdbc = new HibernateFilmDao();
         jdbc.save(film);
-        jdbc.closeConnection();
     }
     
 }

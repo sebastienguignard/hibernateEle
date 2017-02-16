@@ -10,7 +10,7 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"></property>
 
-        <!-- Nombre de connexion possiibles à la base -->
+        <!-- Nombre de connexion possibles à la base -->
         <property name="hibernate.connection.pool_size">5</property>
 
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -18,10 +18,11 @@
         <property name="hibernate.cache.provider_class">org.hibernate.cache.NoCachingEnabledException</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">validate</property>
 
         <!-- List of XML mapping files -->
         <mapping resource="User.hbm.xml"/>
-
+        <mapping resource="Acteur.hbm.xml"/>
+        <mapping resource="Film.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

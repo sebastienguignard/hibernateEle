@@ -10,14 +10,21 @@ package com.aifcc.formation.core.entitys;
  * @author Laurent
  */
 public class Film {
+    private Integer id;
     private String titre ;
     private String genre ;
     private Integer nbExemplaires ;
 
-    
-    
-    
-    
+
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
     public String getTitre() {
         return titre;
     }
@@ -42,10 +49,7 @@ public class Film {
         this.nbExemplaires = nbExemplaires;
     }
 
-    @Override
-    public String toString() {
-        return titre+";"+genre+";"+String.valueOf(nbExemplaires) ;
-    }
+
     
     
     
