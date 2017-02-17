@@ -1,23 +1,21 @@
 package com.aifcc.formation.core.dao;
 
-import com.aifcc.formation.core.entitys.Film;
+import com.aifcc.formation.core.entitys.Actor;
 import com.aifcc.formation.core.util.HibernateUtil;
-import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 /**
- * Created by Laurent on 16/02/2017.
+ * Created by Laurent on 17/02/2017.
  */
-public class HibernateFilmDao {
+public class HibernateActorDao {
 
 
-
-    public void save(Film film){
+    public void save(Actor acteur){
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             session.beginTransaction();
-            session.persist(film);
+            session.persist(acteur);
             session.getTransaction().commit();
         }
         catch (HibernateException hbExc){
@@ -42,17 +40,12 @@ public class HibernateFilmDao {
         }
     }
 
-    public Film getById(int id){
-        Film filmId = null;
+    public Actor getById(int id){
+        Actor acteur = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             session.beginTransaction();
-            filmId = (Film) session.get(Film.class,id);
-            //Redéclanche une requete pour recuperer l'acteur principal du film
-            Hibernate.initialize(filmId.getActeurPrincipal());
-            //Redéclanche un requete pour recuperer la liste des acteur secondaires
-            Hibernate.initialize(filmId.getActeursSecondaires());
-
+            acteur = (Actor) session.get(Actor.class,id);
             session.getTransaction().commit();
         }
         catch (HibernateException hbExc){
@@ -75,8 +68,7 @@ public class HibernateFilmDao {
             }
 
         }
-        return filmId ;
+        return acteur ;
     }
-
 
 }

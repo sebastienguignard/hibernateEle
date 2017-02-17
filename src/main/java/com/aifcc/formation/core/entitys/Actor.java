@@ -28,7 +28,17 @@ public class Actor {
         return prenom;
     }
 
-    public void setPrenom(String prenom) {
+    public void setPrenom(String prenom)
+    {
         this.prenom = prenom;
     }
+
+    @Override
+    public String toString() {
+        return "Actor{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                '}';
+    }
 }
+

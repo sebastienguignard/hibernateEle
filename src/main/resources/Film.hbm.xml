@@ -9,5 +9,11 @@
         <property name="titre" column="TITLE"/>
         <property name="genre" column="MOVIE_TYPE"/>
         <property name="nbExemplaires" column="COPIES"/>
+        <many-to-one name="acteurPrincipal" column="MAIN_ACTOR_ID" cascade="persist"/>
+        <set name="acteursSecondaires" table="movie_sec_actors" cascade="persist">
+            <key column="MOVIE_ID"/>
+            <many-to-many class="com.aifcc.formation.core.entitys.Actor" column="ACTOR_ID"/>
+        </set>
     </class>
+
 </hibernate-mapping>

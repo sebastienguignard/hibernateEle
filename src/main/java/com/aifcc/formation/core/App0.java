@@ -11,6 +11,6 @@ public class App0 {
     public static void main(String arg[]){
         HibernateUtil.getSessionFactory();
         DefaultFilmController controller = new DefaultFilmController();
-        controller.registerFilmFromConsoleInput();
+        controller.descripteFilmWithConsole();
     }
 }

@@ -19,5 +19,10 @@ public class FilmService {
         HibernateFilmDao jdbc = new HibernateFilmDao();
         jdbc.save(film);
     }
+
+    public Film getFilmToDescripte(int id){
+        HibernateFilmDao jdbc = new HibernateFilmDao();
+        return jdbc.getById(id);
+    }
     
 }
