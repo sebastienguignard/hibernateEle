@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="hibernate.cfg.xml/Hibernate">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="video">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="exam_jee"/>
+    <schema id="7" parent="1" name="exam_jee_test"/>
+    <schema id="8" parent="1" name="jee_test"/>
+    <schema id="9" parent="1" name="mon_super_blog"/>
+    <schema id="10" parent="1" name="sys"/>
+    <table id="11" parent="2" name="actor"/>
+    <table id="12" parent="2" name="movie"/>
+    <table id="13" parent="2" name="movie_sec_actors"/>
+    <column id="14" parent="11" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="15" parent="11" name="LASTNAME">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="11" name="FIRSTNAME">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="17" parent="11" name="PRIMARY">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="18" parent="12" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="19" parent="12" name="TITLE">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="12" name="COPIES">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="12" name="MOVIE_TYPE">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="12" name="MAIN_ACTOR_ID">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="23" parent="12" name="fk_MOVIE_ACTOR_idx">
+      <ColNames>MAIN_ACTOR_ID</ColNames>
+    </index>
+    <key id="24" parent="12" name="PRIMARY">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="25" parent="12" name="fk_MOVIE_ACTOR">
+      <ColNames>MAIN_ACTOR_ID</ColNames>
+      <RefSchemaName>video</RefSchemaName>
+      <RefTableName>actor</RefTableName>
+      <RefColNames>ID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="26" parent="13" name="MOVIE_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="13" name="ACTOR_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="28" parent="13" name="fk_MOVIE_SEC_ACTORS_ACTOR1_idx">
+      <ColNames>ACTOR_ID</ColNames>
+    </index>
+    <key id="29" parent="13" name="PRIMARY">
+      <ColNames>MOVIE_ID
+ACTOR_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="30" parent="13" name="fk_MOVIE_SEC_ACTORS_MOVIE1">
+      <ColNames>MOVIE_ID</ColNames>
+      <RefSchemaName>video</RefSchemaName>
+      <RefTableName>movie</RefTableName>
+      <RefColNames>ID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <foreign-key id="31" parent="13" name="fk_MOVIE_SEC_ACTORS_ACTOR1">
+      <ColNames>ACTOR_ID</ColNames>
+      <RefSchemaName>video</RefSchemaName>
+      <RefTableName>actor</RefTableName>
+      <RefColNames>ID</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>

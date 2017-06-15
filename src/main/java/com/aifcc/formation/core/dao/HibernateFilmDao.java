@@ -6,13 +6,15 @@ import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
+import java.util.List;
+
 /**
  * Created by Laurent on 16/02/2017.
  */
-public class HibernateFilmDao {
+public class HibernateFilmDao implements FilmDaoInterface{
 
 
-
+    @Override
     public void save(Film film){
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
@@ -42,16 +44,28 @@ public class HibernateFilmDao {
         }
     }
 
+    @Override
+    public Film getFilmById(int id) {
+        return null;
+    }
+
+    @Override
+    public List<Film> list() {
+        return null;
+    }
+
     public Film getById(int id){
         Film filmId = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             session.beginTransaction();
             filmId = (Film) session.get(Film.class,id);
-            //Redéclanche une requete pour recuperer l'acteur principal du film
-            Hibernate.initialize(filmId.getActeurPrincipal());
-            //Redéclanche un requete pour recuperer la liste des acteur secondaires
-            Hibernate.initialize(filmId.getActeursSecondaires());
+            if(filmId != null){
+                //Redéclanche une requete pour recuperer l'acteur principal du film
+                Hibernate.initialize(filmId.getActeurPrincipal());
+                //Redéclanche une requete pour recuperer la liste des acteur secondaires
+                Hibernate.initialize(filmId.getActeursSecondaires());
+            }
 
             session.getTransaction().commit();
         }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate MAPPING DTD 3.0 //EN"
+                "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.aifcc.formation.core.entitys.Film" table="MOVIE">
+        <id name="id" column="ID">
+            <generator class="identity"/>
+        </id>
+        <property name="titre" column="TITLE"/>
+        <property name="genre" column="MOVIE_TYPE"/>
+        <property name="nbExemplaires" column="COPIES"/>
+        <many-to-one name="acteurPrincipal" column="MAIN_ACTOR_ID" cascade="persist"/>
+        <set name="acteursSecondaires" table="movie_sec_actors" cascade="persist">
+            <key column="MOVIE_ID"/>
+            <many-to-many class="com.aifcc.formation.core.entitys.Actor" column="ACTOR_ID"/>
+        </set>
+    </class>
+
+</hibernate-mapping>

@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,7 +18,7 @@ import java.util.logging.Logger;
  *
  * @author Laurent
  */
-public class JdbcFilmDao {
+public class JdbcFilmDao implements FilmDaoInterface{
     
     private Connection con = null ;
     private final int TITLE = 1 ;
@@ -35,7 +36,8 @@ public class JdbcFilmDao {
    
         }
     }
-    
+
+    @Override
     public void save(Film film){
         try {
             PreparedStatement statement =  con.prepareStatement("INSERT INTO MOVIE (TITLE, COPIES, MOVIE_TYPE) value (?,?,?)");
@@ -47,6 +49,17 @@ public class JdbcFilmDao {
             Logger.getLogger(JdbcFilmDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    @Override
+    public Film getFilmById(int id) {
+        return null;
+    }
+
+    @Override
+    public List<Film> list() {
+        return null;
+    }
+
     public void closeConnection(){
          try {
                 if(con != null) con.close();

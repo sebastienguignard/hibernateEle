@@ -59,7 +59,9 @@ public class Film {
     }
 
 
-
+    public String toFileTxt(){
+        return this.titre + ";" + this.genre+ ";" + this.nbExemplaires + "\r\n";
+    }
     @Override
     public String toString() {
         return "Film{" +
