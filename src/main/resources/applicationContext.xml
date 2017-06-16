@@ -3,13 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="filmDao" class="com.aifcc.formation.core.dao.JdbcFilmDao" >
+    <!--bean id="filmDao" class="com.aifcc.formation.core.dao.JdbcFilmDao" >
         <constructor-arg  value="com.mysql.jdbc.Driver"/>
-    </bean>
+    </bean-->
+    <!--bean id="filmDao" class="com.aifcc.formation.core.dao.HibernateFilmDao" /-->
 
-    <bean id="filmService" class="com.aifcc.formation.core.service.FilmService">
-        <constructor-arg  ref="filmDao" />
+    <bean id="filmDao" class="com.aifcc.formation.core.dao.HibernateFilmDao" >
     </bean>
+    <bean id="filmService" class="com.aifcc.formation.core.service.FilmService" >
+        <constructor-arg  ref="filmDao" />
+     </bean>
 
     <bean id="filmController" class="com.aifcc.formation.core.controller.DefaultFilmController">
         <property name="service" ref="filmService" />

@@ -4602,3 +4602,69 @@ Caused by: org.springframework.beans.NotWritablePropertyException: Invalid prope
 16:48:06,141  INFO TableMetadata:66 - HHH000037: Columns: [actor_id, movie_id]
 16:48:06,325  INFO ClassPathXmlApplicationContext:510 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@23aa363a: startup date [Fri Jun 16 16:48:06 CEST 2017]; root of context hierarchy
 16:48:06,389  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext.xml]
+17:05:26,378  INFO Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+17:05:26,396  INFO Version:41 - HHH000412: Hibernate Core {4.0.1.Final}
+17:05:26,401  INFO Environment:239 - HHH000206: hibernate.properties not found
+17:05:26,403  INFO Environment:342 - HHH000021: Bytecode provider name : javassist
+17:05:26,444  INFO Configuration:1920 - HHH000043: Configuring from resource: /hibernate.cfg.xml
+17:05:26,445  INFO Configuration:1939 - HHH000040: Configuration resource: /hibernate.cfg.xml
+17:05:26,575  INFO Configuration:714 - HHH000221: Reading mappings from resource: User.hbm.xml
+17:05:26,626  WARN DTDEntityResolver:74 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+17:05:26,698  INFO Configuration:714 - HHH000221: Reading mappings from resource: Acteur.hbm.xml
+17:05:26,701  WARN DTDEntityResolver:74 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+17:05:26,737  INFO Configuration:714 - HHH000221: Reading mappings from resource: Film.hbm.xml
+17:05:26,742  WARN DTDEntityResolver:74 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+17:05:26,761  INFO Configuration:2061 - HHH000041: Configured SessionFactory: null
+17:05:26,905  INFO DriverManagerConnectionProviderImpl:90 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+17:05:26,914  INFO DriverManagerConnectionProviderImpl:110 - HHH000115: Hibernate connection pool size: 5
+17:05:26,915  INFO DriverManagerConnectionProviderImpl:113 - HHH000006: Autocommit mode: false
+17:05:26,917  INFO DriverManagerConnectionProviderImpl:127 - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/VIDEO]
+17:05:26,918  INFO DriverManagerConnectionProviderImpl:132 - HHH000046: Connection properties: {user=root, password=****}
+17:05:27,534  INFO Dialect:121 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+17:05:27,579  INFO TransactionFactoryInitiator:68 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+17:05:27,587  INFO ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+17:05:28,290  INFO SchemaValidator:137 - HHH000229: Running schema validator
+17:05:28,290  INFO SchemaValidator:145 - HHH000102: Fetching database metadata
+17:05:28,319  INFO TableMetadata:65 - HHH000261: Table found: VIDEO.actor
+17:05:28,320  INFO TableMetadata:66 - HHH000037: Columns: [firstname, id, lastname]
+17:05:28,327  INFO TableMetadata:65 - HHH000261: Table found: VIDEO.movie
+17:05:28,328  INFO TableMetadata:66 - HHH000037: Columns: [main_actor_id, copies, id, title, movie_type]
+17:05:28,336  INFO TableMetadata:65 - HHH000261: Table found: VIDEO.users
+17:05:28,336  INFO TableMetadata:66 - HHH000037: Columns: [id, username]
+17:05:28,345  INFO TableMetadata:65 - HHH000261: Table found: VIDEO.movie_sec_actors
+17:05:28,345  INFO TableMetadata:66 - HHH000037: Columns: [actor_id, movie_id]
+17:05:28,531  INFO ClassPathXmlApplicationContext:510 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@236e3f4e: startup date [Fri Jun 16 17:05:28 CEST 2017]; root of context hierarchy
+17:05:28,588  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext.xml]
+17:06:06,055  INFO Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+17:06:06,068  INFO Version:41 - HHH000412: Hibernate Core {4.0.1.Final}
+17:06:06,073  INFO Environment:239 - HHH000206: hibernate.properties not found
+17:06:06,076  INFO Environment:342 - HHH000021: Bytecode provider name : javassist
+17:06:06,113  INFO Configuration:1920 - HHH000043: Configuring from resource: /hibernate.cfg.xml
+17:06:06,113  INFO Configuration:1939 - HHH000040: Configuration resource: /hibernate.cfg.xml
+17:06:06,232  INFO Configuration:714 - HHH000221: Reading mappings from resource: User.hbm.xml
+17:06:06,290  WARN DTDEntityResolver:74 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+17:06:06,364  INFO Configuration:714 - HHH000221: Reading mappings from resource: Acteur.hbm.xml
+17:06:06,368  WARN DTDEntityResolver:74 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+17:06:06,388  INFO Configuration:714 - HHH000221: Reading mappings from resource: Film.hbm.xml
+17:06:06,391  WARN DTDEntityResolver:74 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+17:06:06,410  INFO Configuration:2061 - HHH000041: Configured SessionFactory: null
+17:06:06,577  INFO DriverManagerConnectionProviderImpl:90 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+17:06:06,586  INFO DriverManagerConnectionProviderImpl:110 - HHH000115: Hibernate connection pool size: 5
+17:06:06,587  INFO DriverManagerConnectionProviderImpl:113 - HHH000006: Autocommit mode: false
+17:06:06,589  INFO DriverManagerConnectionProviderImpl:127 - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/VIDEO]
+17:06:06,590  INFO DriverManagerConnectionProviderImpl:132 - HHH000046: Connection properties: {user=root, password=****}
+17:06:07,204  INFO Dialect:121 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+17:06:07,253  INFO TransactionFactoryInitiator:68 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+17:06:07,265  INFO ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+17:06:07,885  INFO SchemaValidator:137 - HHH000229: Running schema validator
+17:06:07,885  INFO SchemaValidator:145 - HHH000102: Fetching database metadata
+17:06:07,909  INFO TableMetadata:65 - HHH000261: Table found: VIDEO.actor
+17:06:07,910  INFO TableMetadata:66 - HHH000037: Columns: [firstname, id, lastname]
+17:06:07,917  INFO TableMetadata:65 - HHH000261: Table found: VIDEO.movie
+17:06:07,918  INFO TableMetadata:66 - HHH000037: Columns: [main_actor_id, copies, id, title, movie_type]
+17:06:07,924  INFO TableMetadata:65 - HHH000261: Table found: VIDEO.users
+17:06:07,925  INFO TableMetadata:66 - HHH000037: Columns: [id, username]
+17:06:07,930  INFO TableMetadata:65 - HHH000261: Table found: VIDEO.movie_sec_actors
+17:06:07,931  INFO TableMetadata:66 - HHH000037: Columns: [actor_id, movie_id]
+17:06:08,098  INFO ClassPathXmlApplicationContext:510 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@236e3f4e: startup date [Fri Jun 16 17:06:08 CEST 2017]; root of context hierarchy
+17:06:08,145  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext.xml]
