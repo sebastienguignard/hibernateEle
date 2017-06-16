@@ -8,6 +8,8 @@ package com.aifcc.formation.core.controller;
 import com.aifcc.formation.core.entitys.Actor;
 import com.aifcc.formation.core.entitys.Film;
 import com.aifcc.formation.core.service.FilmService;
+import com.aifcc.formation.core.service.FilmServiceInterface;
+
 import java.util.Scanner;
 
 /**
@@ -16,10 +18,13 @@ import java.util.Scanner;
  */
 public class DefaultFilmController {
 
+
+    private FilmServiceInterface service ;
+
+
     public void registerFilmFromConsoleInput() {
         Film film = new Film();
         Actor acteur = new Actor();
-        FilmService service = new FilmService();
         Scanner scan = new Scanner(System.in);
         
         System.out.println("Quel est le titre du film ?");
@@ -44,7 +49,6 @@ public class DefaultFilmController {
         System.out.println("Quel est l'identifiant du film ?");
         id = scan.nextInt();
 
-        FilmService service = new FilmService();
         Film film = service.getFilmToDescripte(id);
         if(film != null){
             System.out.println(film.toString() + " " + film.getActeurPrincipal().toString());
@@ -56,5 +60,14 @@ public class DefaultFilmController {
         }
 
         else System.out.println("Ce film n'existe pas ...");
+    }
+
+
+    public FilmServiceInterface getService() {
+        return service;
+    }
+
+    public void setService(FilmServiceInterface service) {
+        this.service = service;
     }
 }

@@ -20,6 +20,11 @@ public class HibernateFilmDao implements FilmDaoInterface{
         try {
             session.beginTransaction();
             session.persist(film);
+            if(film.getActeurPrincipal() != null)
+                session.persist(film.getActeurPrincipal());
+
+            if (film.getActeursSecondaires() != null)
+                session.persist(film.getActeursSecondaires());
             session.getTransaction().commit();
         }
         catch (HibernateException hbExc){

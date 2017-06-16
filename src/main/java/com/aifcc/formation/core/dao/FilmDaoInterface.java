@@ -2,6 +2,7 @@ package com.aifcc.formation.core.dao;
 
 import com.aifcc.formation.core.entitys.Film;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -9,7 +10,7 @@ import java.util.List;
  */
 public interface FilmDaoInterface {
 
-    public void save(Film film);
+    public void save(Film film) ;
 
     public Film getFilmById(int id);
 
