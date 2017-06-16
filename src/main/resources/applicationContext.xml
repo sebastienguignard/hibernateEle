@@ -14,6 +14,4 @@
     <bean id="filmController" class="com.aifcc.formation.core.controller.DefaultFilmController">
         <property name="service" ref="filmService" />
     </bean>
-
-
 </beans>

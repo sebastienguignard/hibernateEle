@@ -58,7 +58,6 @@ public class DefaultFilmController {
                 System.out.println(acteur.toString());
             }
         }
-
         else System.out.println("Ce film n'existe pas ...");
     }
 
